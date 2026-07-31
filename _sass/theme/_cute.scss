@@ -1,0 +1,86 @@
+/* ==========================================================================
+   CUTE THEME
+   Lavender-led palette, rounded shapes, soft shadows, patterned ground.
+   Swap back at any time by setting `site_theme: "default"` in _config.yml.
+   ========================================================================== */
+
+/* Neutrals tinted toward the lavender accent rather than a cold gray */
+$gray                       : #8b84a0;
+$dark-gray                  : #4a4257;
+$darker-gray                : #332e40;
+$light-gray                 : #c2bbd4;
+$lighter-gray               : #e7e0f5;
+
+/* Lavender family carries the theme */
+$lavender                   : #7c5fbf;
+$lavender-dark              : #63489f;
+$lavender-mid               : #b49be0;
+$lavender-soft              : #ede7fa;
+$periwinkle                 : #8fa0e8;
+$periwinkle-soft            : #e6eafb;
+
+/* Supporting accents, used sparingly */
+$mint                       : #8fd3c4;
+$butter                     : #ffe0a3;
+$blush                      : #f0c6d8;   /* a whisper of pink, not a theme color */
+
+/* Grounds */
+$lilac-white                : #f6f3fc;
+$card-white                 : #fdfcff;
+
+/* Color codes used for the site */
+$danger-color               : #e08aa8;
+$info-color                 : $periwinkle;
+$notice-color               : $lavender;
+$success-color              : $mint;
+$warning-color              : $butter;
+
+/* Rounder, softer, bouncier than the default theme */
+$border-radius              : 18px;
+$box-shadow                 : 0 6px 20px rgba(124, 95, 191, 0.12);
+$global-transition          : all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+$masthead-height            : 76px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Rounded typefaces — loaded in _includes/head.html */
+$cute-body-font             : "Nunito", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$cute-display-font          : "Quicksand", "Nunito", -apple-system, "Segoe UI", Arial, sans-serif;
+
+$global-font-family         : $cute-body-font;
+$header-font-family         : $cute-display-font;
+$caption-font-family        : $cute-body-font;
+
+:root {
+    --global-base-color                 : #{$gray};
+    --global-bg-color                   : #{$lilac-white};
+    --global-border-color               : #{$lighter-gray};
+    --global-code-background-color      : #{$lavender-soft};
+    --global-code-text-color            : #{$darker-gray};
+    --global-fig-caption-color          : #{$gray};
+    --global-link-color                 : #{$lavender};
+    --global-link-color-hover           : #{$lavender-dark};
+    --global-link-color-visited         : #{$periwinkle};
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : #{$lavender-dark};
+    --global-text-color                 : #{$dark-gray};
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : #{$lavender-soft};
+
+    /* Extra tokens used by layout/cute */
+    --cute-lavender                     : #{$lavender};
+    --cute-lavender-dark                : #{$lavender-dark};
+    --cute-lavender-mid                 : #{$lavender-mid};
+    --cute-lavender-soft                : #{$lavender-soft};
+    --cute-periwinkle                   : #{$periwinkle};
+    --cute-periwinkle-soft              : #{$periwinkle-soft};
+    --cute-mint                         : #{$mint};
+    --cute-butter                       : #{$butter};
+    --cute-blush                        : #{$blush};
+    --cute-card                         : #{$card-white};
+    --cute-shadow                       : 0 6px 20px rgba(124, 95, 191, 0.12);
+    --cute-shadow-lift                  : 0 14px 32px rgba(124, 95, 191, 0.20);
+    --cute-dot                          : rgba(124, 95, 191, 0.10);
+}

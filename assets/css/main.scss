@@ -40,3 +40,8 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+{% if site.site_theme == "cute" %}
+/* Cosmetic polish, imported last so it softens the base layout.
+   Only pulled in when site_theme is "cute". */
+@import "layout/cute";
+{% endif %}

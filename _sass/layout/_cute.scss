@@ -1,0 +1,416 @@
+/* ==========================================================================
+   CUTE THEME — LAYOUT POLISH
+   Imported last so it can soften the shapes the base layout sets up.
+   Everything here is cosmetic: no content or markup depends on it.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Page backdrop
+   A lilac ground, a fine polka-dot weave, and three soft pastel glows —
+   so the page never reads as blank white paper.
+   -------------------------------------------------------------------------- */
+body {
+  background-color: var(--global-bg-color);
+  background-image:
+    /* pastel glows */
+    radial-gradient(circle at 10% 6%,  rgba(180, 155, 224, 0.30) 0%, rgba(180, 155, 224, 0) 40%),
+    radial-gradient(circle at 92% 10%, rgba(143, 160, 232, 0.22) 0%, rgba(143, 160, 232, 0) 38%),
+    radial-gradient(circle at 78% 88%, rgba(143, 211, 196, 0.18) 0%, rgba(143, 211, 196, 0) 34%),
+    /* polka-dot weave */
+    radial-gradient(circle, var(--cute-dot) 1.5px, transparent 1.6px);
+  background-size:
+    auto, auto, auto,
+    22px 22px;
+  background-position:
+    0 0, 0 0, 0 0,
+    0 0;
+  background-attachment: fixed, fixed, fixed, scroll;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--cute-lavender-soft);
+  color: var(--cute-lavender-dark);
+}
+
+/* A visible, on-theme focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cute-periwinkle);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title,
+.sidebar .author__name {
+  font-family: $cute-display-font;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.page__content {
+  p, li {
+    line-height: 1.75;
+  }
+}
+
+/* Section headings: a tiny lavender sparkle, plus a gradient underline */
+.page__content {
+  h2, h3 {
+    position: relative;
+    padding-bottom: 0.35em;
+    padding-left: 1.4em;
+    border-bottom: 0;
+
+    /* four-point sparkle, drawn with clip-path so there is no image to load */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.28em;
+      width: 0.85em;
+      height: 0.85em;
+      background: linear-gradient(135deg, var(--cute-lavender-mid), var(--cute-periwinkle));
+      clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 1.4em;
+      bottom: 0;
+      width: 2.6rem;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cute-lavender), var(--cute-periwinkle));
+    }
+  }
+}
+
+/* Links: soft underline that deepens on hover */
+.page__content a:not(.btn) {
+  text-decoration-color: var(--cute-lavender-soft);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: $global-transition;
+
+  &:hover {
+    text-decoration-color: var(--cute-lavender);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Masthead + navigation — pill links that fill in on hover
+   -------------------------------------------------------------------------- */
+.masthead {
+  border-bottom: 0;
+  background: rgba(253, 252, 255, 0.78);
+  backdrop-filter: saturate(150%) blur(10px);
+  -webkit-backdrop-filter: saturate(150%) blur(10px);
+  box-shadow: 0 2px 18px rgba(124, 95, 191, 0.10);
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    font-family: $cute-display-font;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.4em 0.95em;
+    transition: $global-transition;
+
+    &:hover {
+      background: var(--cute-lavender-soft);
+      color: var(--cute-lavender-dark);
+    }
+  }
+
+  .site-title {
+    font-weight: 700;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .visible-links a::before {
+    /* the base theme draws a sliding underline; the pill fill replaces it */
+    display: none;
+  }
+
+  .hidden-links {
+    border-radius: $border-radius;
+    box-shadow: var(--cute-shadow);
+    border: 1px solid var(--global-border-color);
+
+    a:hover {
+      background: var(--cute-lavender-soft);
+      color: var(--cute-lavender-dark);
+    }
+  }
+
+  button {
+    border-radius: 999px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar / author card
+   -------------------------------------------------------------------------- */
+.sidebar {
+  .author__avatar img {
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px var(--cute-lavender-soft), var(--cute-shadow);
+    transition: $global-transition;
+
+    &:hover {
+      transform: rotate(-2deg) scale(1.03);
+      box-shadow: 0 0 0 3px var(--cute-periwinkle-soft), var(--cute-shadow-lift);
+    }
+  }
+
+  .author__name {
+    margin-bottom: 0.25em;
+  }
+
+  .author__bio {
+    line-height: 1.6;
+  }
+
+  .author__urls {
+    border-radius: $border-radius;
+    border: 1px solid var(--global-border-color);
+    background: var(--cute-card);
+    box-shadow: var(--cute-shadow);
+    padding: 0.35em 0.25em;
+
+    &::before,
+    &::after {
+      display: none; /* drop the little callout arrow */
+    }
+
+    li a {
+      border-radius: 12px;
+      transition: $global-transition;
+
+      &:hover {
+        background: var(--cute-lavender-soft);
+        color: var(--cute-lavender-dark);
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  .author__urls-wrapper button {
+    border-radius: 999px;
+    font-family: $cute-display-font;
+    font-weight: 600;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Content surfaces
+   Cards are a hair off pure white, with a lavender hairline and a dotted
+   corner motif so the surface has some texture of its own.
+   -------------------------------------------------------------------------- */
+.page .page__inner-wrap {
+  position: relative;
+  background: var(--cute-card);
+  border: 1px solid var(--global-border-color);
+  border-radius: 26px;
+  box-shadow: var(--cute-shadow);
+  padding: 1.75em 1.9em 2em;
+  overflow: hidden;
+
+  /* dotted corner flourish */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 62px;
+    height: 62px;
+    background-image: radial-gradient(circle, var(--cute-dot) 1.5px, transparent 1.6px);
+    background-size: 11px 11px;
+    border-radius: 12px;
+    pointer-events: none;
+  }
+}
+
+.archive__item {
+  position: relative;
+  background: var(--cute-card);
+  border: 1px solid var(--global-border-color);
+  border-radius: 22px;
+  box-shadow: var(--cute-shadow);
+  padding: 1.15em 1.35em 1.15em 1.55em;
+  margin-bottom: 1.25em;
+  transition: $global-transition;
+  overflow: hidden;
+
+  /* a soft lavender spine down the left edge */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 5px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--cute-lavender-mid), var(--cute-periwinkle));
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--cute-shadow-lift);
+  }
+}
+
+.archive__item-title {
+  margin-top: 0;
+  border-bottom: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* The list pages stack cards; keep the outer wrapper flat so they read clearly */
+.archive .page__inner-wrap {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+/* Date / meta text */
+.page__meta,
+.page__date {
+  color: var(--global-base-color);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons, quotes, tables, rules
+   -------------------------------------------------------------------------- */
+.btn {
+  border-radius: 999px;
+  font-family: $cute-display-font;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: var(--cute-shadow);
+  border: 0;
+  transition: $global-transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cute-shadow-lift);
+  }
+}
+
+.page__taxonomy .page__taxonomy-item,
+.taxonomy__index a {
+  border-radius: 999px;
+}
+
+blockquote {
+  border-left: 5px solid var(--cute-lavender-mid);
+  border-radius: 0 16px 16px 0;
+  background: var(--cute-lavender-soft);
+  padding: 0.75em 1em;
+  font-style: normal;
+}
+
+table {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--cute-shadow);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead {
+  background: var(--cute-lavender-soft);
+}
+
+code,
+pre {
+  border-radius: 12px;
+}
+
+/* A dotted rule instead of a hard line */
+hr {
+  border: 0;
+  height: 7px;
+  background-image: radial-gradient(circle, var(--cute-lavender-mid) 2.5px, transparent 2.6px);
+  background-size: 16px 7px;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.7;
+}
+
+/* Images in content get the same soft corners */
+.page__content img {
+  border-radius: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.page__footer {
+  background: transparent;
+  color: var(--global-base-color);
+
+  footer {
+    border-top: 0;
+    padding-top: 1.25em;
+    background-image: radial-gradient(circle, var(--cute-lavender-mid) 2px, transparent 2.1px);
+    background-size: 14px 6px;
+    background-repeat: repeat-x;
+    background-position: top center;
+  }
+
+  a:hover {
+    color: var(--cute-lavender-dark);
+  }
+}
+
+.page__footer-follow .social-icons a {
+  transition: $global-transition;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.08);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Motion preferences
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .archive__item:hover,
+  .btn:hover,
+  .sidebar .author__avatar img:hover {
+    transform: none;
+  }
+}
