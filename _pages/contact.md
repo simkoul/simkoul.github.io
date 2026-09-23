@@ -23,7 +23,7 @@ author_profile: false
     </div>
 
     <div class="invite">
-      <p>Feel free to reach out to me at
+      <p>Please feel free to reach out to me at
       <a href="mailto:simran_koul@ucsb.edu?subject=Hello">simran_koul@ucsb.edu</a>.</p>
     </div>
   </div>
