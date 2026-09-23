@@ -20,10 +20,7 @@ body {
 
 body {
   background-color: var(--paper);
-  background-image: url("/images/doodles-a.svg"), url("/images/doodles-b.svg");
-  background-size: 300px 300px, 211px 211px;
-  background-repeat: repeat, repeat;
-  background-attachment: fixed, fixed;
+  background-image: none;
   color: var(--ink);
   font-size: 16.5px;
   line-height: 1.72;
@@ -621,7 +618,7 @@ body {
 
 /* Citations are prose, not interface, so they take the display serif at close
    to reading size. The hanging indent is APA's. */
-.cite {
+.page__content .cite {
   margin: 0;
   padding-left: 1.6em;
   text-indent: -1.6em;
