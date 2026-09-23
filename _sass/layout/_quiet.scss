@@ -26,6 +26,7 @@ body {
    Masthead — pinned, hairline rule, nothing else
    -------------------------------------------------------------------------- */
 .masthead {
+  font-family: $quiet-body;
   position: sticky;
   top: 0;
   z-index: 40;
@@ -39,6 +40,7 @@ body {
   background: transparent;
 
   a {
+    font-family: $quiet-body;
     font-size: 0.82rem;
     font-weight: 400;
     text-transform: none;
@@ -325,14 +327,19 @@ body {
    -------------------------------------------------------------------------- */
 .item {
   display: grid;
-  grid-template-columns: 5.5rem 1fr;
+  grid-template-columns: 6.6rem 1fr;   /* wide enough for "Summer 2025" */
   gap: 1.1rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--rule);
 
   &:last-child { border-bottom: 0; }
 
-  .y { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .y {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
   .t { font-family: $quiet-display; font-weight: 400; font-size: 1.06rem; }
   .s { font-family: $quiet-display; font-style: italic; font-size: 1rem; color: var(--muted); }
   .st { font-size: 0.76rem; color: var(--muted); }
