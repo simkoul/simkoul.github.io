@@ -35,10 +35,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 40;
+
+  /* The base template fixes this at 64px for a fixed navbar. The links are
+     set in the display serif now and outgrew that box, so they spilled past
+     the bottom border and hid it behind the nav. Let the bar size itself. */
+  height: auto;
   background: rgba(250, 249, 247, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
+}
+
+.masthead__inner-wrap {
+  font-family: $quiet-body;
+  padding: 0.75rem 1em;
 }
 
 .greedy-nav {
