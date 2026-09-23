@@ -1,0 +1,77 @@
+/* ==========================================================================
+   WHIMSY THEME
+   Warm paper ground, outline doodles in ink, a playful display serif and
+   two accents (persimmon + teal) doing the light work.
+
+   Doodle tiles live at images/doodles-a.svg and images/doodles-b.svg.
+   Regenerate them:
+       python3 tools/make_doodles.py --set mixed --ink ink --density 10
+   ========================================================================== */
+
+$paper      : #fbf6ec;   /* warm cream */
+$card       : #fffdf8;   /* card sits slightly lighter than the page */
+$ink        : #232a33;
+$muted      : #6d7684;
+$rule       : #e7dcc8;   /* faint divider */
+$edge       : #d5c7ad;   /* stronger divider */
+$accent     : #d9583c;   /* persimmon — primary */
+$accent2    : #2c8a79;   /* teal — secondary */
+$gold       : #c8901c;   /* used for small marks and tags */
+
+/* Names the base template expects */
+$gray         : $muted;
+$dark-gray    : $ink;
+$darker-gray  : #111820;
+$light-gray   : $rule;
+$lighter-gray : #f2ead9;
+
+$danger-color : $accent;
+$info-color   : $accent2;
+$notice-color : $gold;
+$success-color: $accent2;
+$warning-color: $gold;
+
+$border-radius            : 10px;
+$box-shadow               : 0 2px 12px rgba(35, 42, 51, 0.09);
+$global-transition        : all 0.2s ease;
+$masthead-height          : 66px;
+$navicon-width            : 28px;
+$navicon-height           : 4px;
+$sidebar-link-max-width   : 250px;
+$sidebar-screen-min-width : 1024px;
+
+/* Typefaces — loaded in _includes/head.html */
+$whimsy-body    : "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$whimsy-display : "Fraunces", Georgia, "Times New Roman", serif;
+$whimsy-mono    : "IBM Plex Mono", Menlo, Consolas, monospace;
+
+$global-font-family  : $whimsy-body;
+$header-font-family  : $whimsy-display;
+$caption-font-family : $whimsy-body;
+
+:root {
+  --global-base-color                : #{$muted};
+  --global-bg-color                  : #{$paper};
+  --global-border-color              : #{$rule};
+  --global-code-background-color     : #f3ecdc;
+  --global-code-text-color           : #{$ink};
+  --global-fig-caption-color         : #{$muted};
+  --global-link-color                : #{$ink};
+  --global-link-color-hover          : #{$accent};
+  --global-link-color-visited        : #{$ink};
+  --global-masthead-link-color       : #{$ink};
+  --global-masthead-link-color-hover : #{$accent};
+  --global-text-color                : #{$ink};
+  --global-text-color-light          : #{$muted};
+  --global-thead-color               : #f3ecdc;
+
+  --paper   : #{$paper};
+  --card    : #{$card};
+  --ink     : #{$ink};
+  --muted   : #{$muted};
+  --rule    : #{$rule};
+  --edge    : #{$edge};
+  --accent  : #{$accent};
+  --accent2 : #{$accent2};
+  --gold    : #{$gold};
+}

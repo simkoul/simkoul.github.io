@@ -1,0 +1,29 @@
+# Photographs for the Gallery page.
+#
+#   group   - the section it appears under. Reuse the exact same spelling for
+#             every photo in a set, and the sections appear in the order the
+#             groups first show up in this file.
+#   image   - filename inside /images/elsewhere/
+#   caption - the part worth writing. Where, when, and what was happening.
+#   alt     - screen-reader description (falls back to the caption)
+#
+# Photos are never cropped: portrait and landscape both sit fine in the grid.
+# Save them around 1400px on the long edge.
+#
+# TODO: replace the examples below with your own. Delete this block when done.
+
+# - group: Fieldwork
+#   image: jharkhand-coal.jpg
+#   caption: "Coal belt, Jharkhand, 2024. Sampling within a kilometre of an open-cast pit."
+#
+# - group: Fieldwork
+#   image: survey-bihar.jpg
+#   caption: "Motihari, Bihar, 2023."
+#
+# - group: Elsewhere
+#   image: delhi-winter.jpg
+#   caption: "Delhi, December 2022. The week the AQI stopped being a number and started being weather."
+#
+# - group: Elsewhere
+#   image: sb-pier.jpg
+#   caption: "Santa Barbara, 2025."

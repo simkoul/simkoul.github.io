@@ -1,0 +1,542 @@
+/* ==========================================================================
+   NIGHT THEME — LAYOUT
+   Imported last so it wins over the base template.
+   Only active when site_theme is "night".
+   ========================================================================== */
+
+html { background: var(--paper); }
+
+body {
+  background-color: var(--paper);
+  background-image: url("/images/doodles-a.svg"), url("/images/doodles-b.svg");
+  background-size: 240px 240px, 173px 173px;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed, fixed;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Masthead — pinned, so it never leaves the top of the screen
+   -------------------------------------------------------------------------- */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(11, 12, 14, 0.88);
+  backdrop-filter: saturate(150%) blur(10px);
+  -webkit-backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid var(--edge);
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+
+    &::before { display: none; }
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+
+  .site-title {
+    font-family: $night-display;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .hidden-links {
+    background: #16181c;
+    border: 1px solid var(--edge);
+
+    a:hover { background: #1e2126; }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Shell
+   -------------------------------------------------------------------------- */
+.wrap  { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+.narrow { max-width: 66ch; }
+.col    { max-width: 66ch; }
+
+.band { padding: 2.1rem 0; }
+
+/* --------------------------------------------------------------------------
+   Type
+   -------------------------------------------------------------------------- */
+.page__content {
+  h1.display {
+    font-family: $night-display;
+    font-weight: 600;
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin: 0 0 0.2rem;
+    border: 0;
+  }
+
+  h2, h3 { border-bottom: 0; }
+
+  p { max-width: 66ch; }
+
+  a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+
+    &:hover { color: var(--gold); }
+  }
+}
+
+.aff { color: var(--muted); font-size: 0.95rem; margin: 0 0 1.05rem; }
+
+/* Section head: label left, "More here" right */
+.shead {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--edge);
+
+  h2 {
+    font-family: $night-body;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+.more {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--gold);
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; text-underline-offset: 3px; color: var(--gold); }
+}
+
+/* --------------------------------------------------------------------------
+   Hero — option C: large portrait beside the text
+   -------------------------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.6rem;
+  padding: 3rem 0 2.4rem;
+  align-items: center;
+}
+
+.hero__portrait {
+  aspect-ratio: 4 / 5;
+  background-size: cover;
+  background-position: center;
+  background-color: #16181c;
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 1.6rem; padding-top: 2rem; }
+  .hero__portrait { max-width: 300px; }
+}
+
+/* --------------------------------------------------------------------------
+   Entries
+   -------------------------------------------------------------------------- */
+.item {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child { border-bottom: 0; }
+
+  .y { font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .t { font-weight: 600; font-size: 0.95rem; }
+  .s { font-size: 0.86rem; color: var(--muted); }
+  .st { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+}
+
+@media (max-width: 600px) {
+  .item { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* The single "latest" item on the home page */
+.latest { border-left: 2px solid var(--gold); padding-left: 1.1rem; }
+.tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   Open tabs — the thinking feed
+   -------------------------------------------------------------------------- */
+.think {
+  border-top: 1px solid var(--rule);
+  padding: 1.05rem 0;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.1rem;
+
+  &:first-of-type { border-top: 0; }
+
+  .when {
+    font-family: $night-mono;
+    font-size: 0.72rem;
+    color: var(--muted);
+    padding-top: 0.28rem;
+  }
+
+  .what { font-size: 0.97rem; max-width: 62ch; }
+  .tags { margin-top: 0.4rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+  .tag {
+    font-family: $night-mono;
+    font-size: 0.66rem;
+    color: var(--gold);
+    border: 1px solid rgba(201, 162, 39, 0.45);
+    border-radius: 2px;
+    padding: 0.1em 0.45em;
+  }
+}
+
+@media (max-width: 600px) {
+  .think { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+.invite {
+  border-left: 2px solid var(--gold);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin-top: 1.6rem;
+  font-size: 0.93rem;
+  max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   Photographs on Elsewhere
+   -------------------------------------------------------------------------- */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 1.2rem 0 0.5rem;
+
+  figure { margin: 0; }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    filter: saturate(0.85);
+  }
+
+  figcaption { font-size: 0.74rem; color: var(--muted); padding-top: 0.35rem; }
+}
+
+/* --------------------------------------------------------------------------
+   TODO markers — delete each one as you fill it in
+   -------------------------------------------------------------------------- */
+.todo {
+  border: 1px dashed var(--gold);
+  color: var(--gold);
+  border-radius: 2px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.83rem;
+  margin: 0 0 1.05rem;
+  max-width: 66ch;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons and footer
+   -------------------------------------------------------------------------- */
+.btn,
+.page__content .btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  padding: 0.55em 1.2em;
+  font-size: 0.88rem;
+  text-decoration: none;
+
+  &:hover { background: var(--gold); color: #0b0c0e; }
+}
+
+.page__footer {
+  background: transparent;
+  color: var(--muted);
+
+  footer { border-top: 1px solid var(--rule); padding-top: 1.4rem; }
+  a { color: var(--muted); }
+  a:hover { color: var(--gold); }
+}
+
+/* --------------------------------------------------------------------------
+   CV page
+   -------------------------------------------------------------------------- */
+
+/* jump links under the CV header */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+
+  a {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+
+    &:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+  }
+}
+
+/* two columns for the short, list-like CV sections */
+.cvcols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 2.6rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .cvcols { grid-template-columns: 1fr; gap: 1.4rem; }
+}
+
+/* small label above a group inside a section */
+.glabel {
+  font-family: $night-mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.35rem;
+
+  /* leave air above a second group in the same column */
+  .item + & { margin-top: 1.4rem; }
+}
+
+.glabel + .item { border-top: 0; }
+
+/* methods and tools */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  span {
+    font-size: 0.78rem;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.2em 0.6em;
+  }
+}
+
+/* Last-updated stamp in the footer */
+.updated {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+
+/* --------------------------------------------------------------------------
+   Keyboard access
+   -------------------------------------------------------------------------- */
+
+/* Skip link — first thing a keyboard or screen-reader user meets */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--gold);
+  color: #0b0c0e;
+  padding: 0.6em 1em;
+  font-weight: 600;
+  border-radius: 0 0 2px 0;
+
+  &:focus {
+    left: 0;
+    color: #0b0c0e;
+  }
+}
+
+/* The base theme has no visible focus ring on a dark ground. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   A black page prints as a black rectangle. People do print academic pages —
+   search committees especially — so flip to ink on paper.
+   -------------------------------------------------------------------------- */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    background-image: none !important;   /* no doodles on paper */
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .masthead,
+  .page__footer,
+  .todo,
+  .jump,
+  .more,
+  .skip-link { display: none !important; }
+
+  .wrap { max-width: 100%; padding: 0; }
+
+  a { color: #000 !important; text-decoration: underline; }
+
+  /* spell out link targets, since paper cannot be clicked */
+  .page__content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  .item,
+  .think { break-inside: avoid; }
+
+  .shead { border-bottom: 1px solid #000; }
+
+  .item .y,
+  .item .s,
+  .think .when { color: #333 !important; }
+
+  .latest,
+  .invite { border-left: 2px solid #000; }
+
+  .hero { display: block; }
+  .hero__portrait { display: none; }
+}
+
+
+/* --------------------------------------------------------------------------
+   References — APA citations with a hanging indent, each with room for a note
+   -------------------------------------------------------------------------- */
+.ref {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ref:last-child { border-bottom: 0; }
+
+.cite {
+  margin: 0;
+  padding-left: 1.6em;
+  text-indent: -1.6em;   /* hanging indent, as APA sets it */
+  font-size: 0.95rem;
+  max-width: 72ch;
+
+  a { word-break: break-word; }
+}
+
+.blurb {
+  margin-top: 0.7rem;
+  margin-left: 1.6em;
+}
+
+/* --------------------------------------------------------------------------
+   Home profile column — details and links beside the portrait
+   -------------------------------------------------------------------------- */
+.profile { display: grid; gap: 1rem; align-content: start; }
+
+.profile__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.88rem;
+
+  li {
+    padding: 0.32rem 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  li:last-child { border-bottom: 0; }
+
+  a { color: var(--ink); text-decoration: none; }
+  a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+}
+
+/* the hero grid now holds the profile column, so align to the top */
+.hero { align-items: start; }
+
+/* Small inline icons in the profile list */
+.profile__list .ic {
+  width: 0.95em;
+  height: 0.95em;
+  margin-right: 0.45em;
+  vertical-align: -0.12em;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   Reading
+   -------------------------------------------------------------------------- */
+.book {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+  max-width: 66ch;
+}
+
+.book:first-of-type { border-top: 0; }
+
+.book__title {
+  font-family: $night-display;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.book__author {
+  font-family: $night-body;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 0.6em;
+}
+
+.book__note { margin: 0.4rem 0 0; font-size: 0.94rem; }
+
+.book__quote {
+  margin: 0.7rem 0 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--gold);
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}

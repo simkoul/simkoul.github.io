@@ -1,0 +1,29 @@
+# "Reading" on the Open tabs page.
+#
+#   title  - book title
+#   author - author
+#   note   - one or two lines in your voice. Your reaction, not a summary.
+#   quote  - optional, one short line from the book
+#
+# Keep it to two or three books. A list of ten reads as a shelf; two reads as a person.
+# Update it when you finish something. A book sitting here for a year is worse than none.
+#
+# TODO: these three are placeholders chosen to fit your field. Replace them.
+
+- title: "Invisible Women"
+  author: "Caroline Criado Perez"
+  note: >
+    Mostly it has made me suspicious of my own data. Half the surveys I use were designed
+    by people who assumed a default human, and it shows up in what they did not think to ask.
+  quote: "One of the most important things to say about the gender data gap is that it is not generally malicious."
+
+- title: "The Great Derangement"
+  author: "Amitav Ghosh"
+  note: >
+    On why climate change is so hard to write about. I keep thinking about it when I try to
+    explain my work to people outside it.
+
+- title: "Thinking in Systems"
+  author: "Donella Meadows"
+  note: >
+    Short, and I have started rereading it every time a model stops making sense.

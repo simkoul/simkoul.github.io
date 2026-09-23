@@ -1,0 +1,70 @@
+/* ==========================================================================
+   NIGHT THEME
+   Black ground scattered with outline doodles, gold accent, quiet typography.
+
+   The doodle tiles live at images/doodles-a.svg and images/doodles-b.svg.
+   Regenerate them with different settings:
+       python3 tools/make_doodles.py --set nature --ink white --density 12
+   ========================================================================== */
+
+$paper      : #0b0c0e;
+$ink        : #ecedef;
+$muted      : #9aa0a8;
+$rule       : #26292e;   /* faint divider */
+$edge       : #3a3d43;   /* stronger divider */
+$gold       : #c9a227;
+
+/* Names the base template expects */
+$gray         : $muted;
+$dark-gray    : $ink;
+$darker-gray  : #ffffff;
+$light-gray   : $muted;
+$lighter-gray : $rule;
+
+$danger-color : #d4726a;
+$info-color   : $gold;
+$notice-color : $gold;
+$success-color: #7fbf9a;
+$warning-color: $gold;
+
+$border-radius            : 2px;
+$box-shadow               : 0 2px 10px rgba(0, 0, 0, 0.5);
+$global-transition        : all 0.2s ease;
+$masthead-height          : 66px;
+$navicon-width            : 28px;
+$navicon-height           : 4px;
+$sidebar-link-max-width   : 250px;
+$sidebar-screen-min-width : 1024px;
+
+/* Typefaces — loaded in _includes/head.html */
+$night-body    : "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$night-display : "Spectral", Georgia, "Times New Roman", serif;
+$night-mono    : "IBM Plex Mono", Menlo, Consolas, monospace;
+
+$global-font-family  : $night-body;
+$header-font-family  : $night-display;
+$caption-font-family : $night-body;
+
+:root {
+  --global-base-color                : #{$muted};
+  --global-bg-color                  : #{$paper};
+  --global-border-color              : #{$rule};
+  --global-code-background-color     : #16181c;
+  --global-code-text-color           : #{$ink};
+  --global-fig-caption-color         : #{$muted};
+  --global-link-color                : #{$ink};
+  --global-link-color-hover          : #{$gold};
+  --global-link-color-visited        : #{$ink};
+  --global-masthead-link-color       : #{$ink};
+  --global-masthead-link-color-hover : #{$gold};
+  --global-text-color                : #{$ink};
+  --global-text-color-light          : #{$muted};
+  --global-thead-color               : #16181c;
+
+  --paper : #{$paper};
+  --ink   : #{$ink};
+  --muted : #{$muted};
+  --rule  : #{$rule};
+  --edge  : #{$edge};
+  --gold  : #{$gold};
+}

@@ -1,0 +1,793 @@
+/* ==========================================================================
+   QUIET THEME — LAYOUT
+   Imported last so it wins over the base template.
+   Only active when site_theme is "quiet".
+
+   Rules this file keeps to:
+     no transform, no box-shadow, no border-radius, no wavy underlines,
+     no colour except the one accent, and only two type sizes doing real work.
+   ========================================================================== */
+
+html { background: var(--paper); }
+
+body {
+  background-color: var(--paper);
+  background-image: url("/images/doodles-a.svg"), url("/images/doodles-b.svg");
+  background-size: 300px 300px, 211px 211px;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed, fixed;
+  color: var(--ink);
+  font-size: 16.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Masthead — pinned, hairline rule, nothing else
+   -------------------------------------------------------------------------- */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(250, 249, 247, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.01em;
+
+    &::before { display: none; }
+
+    &:hover { color: var(--accent); }
+  }
+
+  .site-title {
+    font-family: $quiet-display;
+    font-weight: 400;
+    font-size: 1.02rem;
+    letter-spacing: 0.01em;
+  }
+
+  .hidden-links {
+    background: var(--paper);
+    border: 1px solid var(--edge);
+
+    a:hover { background: #f0eeea; }
+  }
+}
+
+}
+
+/* --------------------------------------------------------------------------
+   Shell — narrower than before. Minimalism is mostly margin.
+   -------------------------------------------------------------------------- */
+.wrap   { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+.narrow { max-width: 64ch; }
+.col    { max-width: 64ch; }
+
+.band { padding: 2.6rem 0; }
+
+/* --------------------------------------------------------------------------
+   Type
+   -------------------------------------------------------------------------- */
+.page__content {
+  h1.display {
+    font-family: $quiet-display;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.22;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.35rem;
+    border: 0;
+  }
+
+  h2, h3 { border-bottom: 0; }
+
+  p {
+    max-width: 62ch;
+    font-family: $quiet-display;
+    font-size: 1.04rem;
+    line-height: 1.62;
+  }
+
+  a:not(.btn) {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--edge);
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+  }
+}
+
+.aff {
+  font-family: $quiet-display;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+/* Section head. Set as a real heading in the display serif rather than a small
+   caps label: at 0.72rem there was no middle tier between the 2.15rem page
+   title and the body, and the page read as a form rather than a document. */
+.shead {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--rule);
+
+  h2 {
+    font-family: $quiet-display;
+    font-size: 1.42rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.004em;
+    text-transform: none;
+    color: var(--ink);
+    margin: 0;
+  }
+}
+
+/* a little more air above a section than below its own rule */
+.band + .band .shead { margin-top: 0; }
+
+.more {
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--muted);
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:hover { color: var(--accent); }
+}
+
+/* --------------------------------------------------------------------------
+   Home — the only page that is centred. Portrait, bio, contacts. Nothing else;
+   the masthead handles navigation.
+
+   The bio stays left-aligned inside its centred column: centred body copy at
+   this length is noticeably harder to read, and the ragged left edge is what
+   makes it look sloppy rather than deliberate.
+   -------------------------------------------------------------------------- */
+.home {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+/* The portrait runs the full width of the column, so it lines up exactly with
+   the bio beneath it. Landscape at 7:5, which is the photograph's own shape:
+   full width, a little over half the height a portrait frame would take, and
+   nothing cropped away. */
+.home__portrait {
+  width: 100%;
+  aspect-ratio: 7 / 5;
+  margin: 0 auto 2.2rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #ecebe6;
+}
+
+.page__content h1.home__name {
+  font-size: 2rem;
+  margin: 0 0 0.6rem;
+}
+
+.home__aff {
+  margin: 0 auto 2.2rem;
+  max-width: 46ch;
+}
+
+/* Role and institution are doing different jobs, so they are set differently:
+   the role in ink and letterspaced, the institution in the display italic and
+   dropped to the muted grey. No punctuation needed between them. */
+.home__role,
+.home__inst {
+  display: block;
+}
+
+.home__role {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.55rem;
+}
+
+.home__inst {
+  font-family: $quiet-display;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* The bio is the only real prose on the site, so it gets the serif and a
+   larger size. Inter is a UI face; at paragraph length it reads flat. */
+.home__bio {
+  text-align: left;
+  margin: 0 auto 2.4rem;
+  max-width: none;
+}
+
+.page__content .home__bio p {
+  margin: 0;
+  font-family: $quiet-display;
+  font-size: 1.14rem;
+  line-height: 1.62;
+  letter-spacing: 0.002em;
+  color: var(--ink);
+}
+
+/* The award sits on its own, between hairlines, in the same label-then-italic
+   pattern as the affiliation above it. It was previously a trailing sentence
+   in the bio, which read like a footnote to the thing it should be leading. */
+.award {
+  margin: 0 auto 2rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  max-width: 46ch;
+}
+
+.award__label,
+.award__name,
+.award__org {
+  display: block;
+}
+
+.award__label {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.award__name {
+  font-family: $quiet-display;
+  font-style: italic;
+  font-size: 1.06rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.award__org {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* contacts on one line, separated by hairline rules rather than punctuation */
+.home__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.4rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+
+  li { position: relative; }
+
+  li + li::before {
+    content: "";
+    position: absolute;
+    left: -0.72rem;
+    top: 0.28em;
+    bottom: 0.28em;
+    border-left: 1px solid var(--edge);
+  }
+
+  a { color: var(--ink); text-decoration: none; }
+  a:hover { color: var(--accent); }
+
+  .ic {
+    width: 0.9em;
+    height: 0.9em;
+    margin-right: 0.35em;
+    vertical-align: -0.1em;
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+@media (max-width: 560px) {
+  .home { padding-top: 2.6rem; }
+  .home__portrait { margin-bottom: 1.8rem; }
+  .home__links { gap: 0.5rem 1.1rem; }
+  .home__links li + li::before { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Entries
+   -------------------------------------------------------------------------- */
+.item {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child { border-bottom: 0; }
+
+  .y { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .t { font-family: $quiet-display; font-weight: 400; font-size: 1.06rem; }
+  .s { font-family: $quiet-display; font-style: italic; font-size: 1rem; color: var(--muted); }
+  .st { font-size: 0.76rem; color: var(--muted); }
+}
+
+@media (max-width: 600px) {
+  .item { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* flat, no card, no tilt */
+.latest {
+  border-left: 1px solid var(--edge);
+  padding-left: 1.2rem;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+/* A funder or qualifier set inside an entry title. Italic serif in the muted
+   grey, the same voice the institution lines on the home page use. */
+.qual {
+  font-family: $quiet-display;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Open tabs
+   -------------------------------------------------------------------------- */
+.think {
+  border-top: 1px solid var(--rule);
+  padding: 1.15rem 0;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.1rem;
+
+  &:first-of-type { border-top: 0; }
+
+  .when {
+    font-family: $quiet-mono;
+    font-size: 0.7rem;
+    color: var(--muted);
+    padding-top: 0.3rem;
+  }
+
+  .what {
+    font-family: $quiet-display;
+    font-size: 1.04rem;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+  .tags { margin-top: 0.5rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+  /* not pills — just small caps set in the muted grey */
+  .tag {
+    font-family: $quiet-mono;
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &::before { content: "· "; color: var(--edge); }
+  }
+}
+
+@media (max-width: 600px) {
+  .think { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+/* Framed the same way as the award block on the home page: hairlines above and
+   below, nothing else. */
+.invite {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.3rem 0;
+  margin-top: 2rem;
+  font-family: $quiet-display;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  max-width: 62ch;
+  color: var(--ink);
+}
+
+.invite p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  max-width: none;
+}
+
+.invite p + p { margin-top: 0.75rem; }
+
+/* --------------------------------------------------------------------------
+   Gallery — square corners, no shadow, no tilt
+   -------------------------------------------------------------------------- */
+.gal {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .gal { column-count: 1; }
+}
+
+.gal__item {
+  break-inside: avoid;
+  margin: 0 0 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: zoom-in;
+    transition: opacity 0.18s ease;
+  }
+
+  &:hover img { opacity: 0.86; }
+
+  figcaption {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted);
+    padding: 0.5rem 0 0;
+    max-width: 46ch;
+  }
+}
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(28, 28, 27, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 4vw;
+  cursor: zoom-out;
+
+  &[hidden] { display: none; }
+
+  figure { margin: 0; max-width: 100%; max-height: 100%; text-align: center; }
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 84vh;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    color: #e4e2dd;
+    font-size: 0.83rem;
+    padding-top: 0.9rem;
+    max-width: 58ch;
+    margin: 0 auto;
+  }
+}
+
+.lb__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  background: none;
+  border: 0;
+  color: #e4e2dd;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+
+  &:hover { color: #fff; }
+}
+
+/* --------------------------------------------------------------------------
+   Buttons — a text link with a hairline box, nothing more
+   -------------------------------------------------------------------------- */
+.btn,
+.page__content .btn {
+  display: inline-block;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--edge);
+  border-radius: 0;
+  padding: 0.5em 1.1em;
+  font-size: 0.84rem;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover { border-color: var(--accent); color: var(--accent); }
+}
+
+.page__footer {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+
+  footer { border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+  a { color: var(--muted); }
+  a:hover { color: var(--accent); }
+}
+
+/* --------------------------------------------------------------------------
+   List-like sections
+   -------------------------------------------------------------------------- */
+.cvcols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem 2.6rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .cvcols { grid-template-columns: 1fr; gap: 1.6rem; }
+}
+
+.glabel {
+  font-family: $quiet-body;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+
+  .item + & { margin-top: 1.6rem; }
+}
+
+.glabel + .item { border-top: 0; }
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+
+  span {
+    font-size: 0.84rem;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.updated { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.6rem; }
+
+/* --------------------------------------------------------------------------
+   References — APA with a hanging indent
+   -------------------------------------------------------------------------- */
+.ref {
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ref:last-child { border-bottom: 0; }
+
+/* Citations are prose, not interface, so they take the display serif at close
+   to reading size. The hanging indent is APA's. */
+.cite {
+  margin: 0;
+  padding-left: 1.6em;
+  text-indent: -1.6em;
+  font-family: $quiet-display;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: 68ch;
+
+  a {
+    word-break: break-word;
+    font-family: $quiet-body;
+    font-size: 0.86rem;
+  }
+}
+
+.blurb { margin-top: 0.7rem; margin-left: 1.6em; }
+
+/* Photographs attached to a conference presentation. One or two per talk,
+   set small so the citation stays the thing being read. */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 1rem 0 0.2rem;
+  align-items: start;
+
+  /* Natural proportions. Forcing these into a fixed box cropped the edges off
+     every photograph, which is why they looked cut short. */
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* One caption for the set. It is a grid item spanning every column, so its
+   width is the width of the photographs above it. A max-width here would be
+   measured in the caption's own smaller font and come out far too narrow. */
+.shots__cap {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  max-width: none;
+}
+
+@media print {
+  .shots { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Home profile column
+   -------------------------------------------------------------------------- */
+.profile { display: grid; gap: 1.1rem; align-content: start; }
+
+.profile__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.86rem;
+
+  li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  li:last-child { border-bottom: 0; }
+
+  a { color: var(--ink); text-decoration: none; }
+  a:hover { color: var(--accent); }
+}
+
+.profile__list .ic {
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.45em;
+  vertical-align: -0.1em;
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --------------------------------------------------------------------------
+   Reading
+   -------------------------------------------------------------------------- */
+.book {
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--rule);
+  max-width: 64ch;
+}
+
+.book:first-of-type { border-top: 0; }
+
+.book__title {
+  font-family: $quiet-display;
+  font-weight: 400;
+  font-size: 1.06rem;
+}
+
+.book__author {
+  font-family: $quiet-body;
+  font-weight: 400;
+  font-size: 0.83rem;
+  color: var(--muted);
+  margin-left: 0.6em;
+}
+
+.book__note {
+  margin: 0.45rem 0 0;
+  font-family: $quiet-display;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* no highlighter — a hairline and italics */
+.book__quote {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--edge);
+  font-size: 0.89rem;
+  font-style: italic;
+  color: var(--muted);
+  background: none;
+}
+
+/* --------------------------------------------------------------------------
+   Keyboard access
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.6em 1em;
+
+  &:focus { left: 0; color: var(--paper); }
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    background-image: none !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .masthead,
+  .page__footer,
+  .more,
+  .lb,
+  .skip-link { display: none !important; }
+
+  .wrap { max-width: 100%; padding: 0; }
+
+  a { color: #000 !important; text-decoration: underline; }
+
+  .page__content a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  .item,
+  .think,
+  .book,
+  .ref { break-inside: avoid; }
+
+  .home { padding-top: 0; text-align: left; }
+  .home__portrait { display: none; }
+  .home__links { justify-content: flex-start; border-top: 1px solid #000; }
+}

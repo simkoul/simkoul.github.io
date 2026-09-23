@@ -1,8 +1,9 @@
 ---
-permalink: /publications/
-title: "Publications"
+permalink: /research/
+title: "Research"
 layout: splash
 author_profile: false
+published: false   # content moved to /publications/
 ---
 
 {% include base_path %}
@@ -10,7 +11,7 @@ author_profile: false
 <div class="wrap">
 
   <div class="band">
-    <h1 class="display">Publications</h1>
+    <h1 class="display">Research</h1>
   </div>
 
   <div class="band">
@@ -40,6 +41,17 @@ author_profile: false
       pollution exposure and timing of menarche</em>. Selected oral presentation, 2026
       Collaborative Research Symposium, Cottage Health Research Institute, Santa Barbara,
       CA.</p>
+      {% assign shots = site.data.conferences | where: "talk", "cottage-health-2026" %}
+      {% if shots.size > 0 %}
+      <div class="shots">
+        {% for shot in shots %}
+        <img src="{{ shot.image | prepend: '/images/conferences/' | prepend: base_path }}"
+             alt="{{ shot.alt | default: shot.caption | escape }}" loading="lazy" decoding="async">
+        {% endfor %}
+      </div>
+      {% if shots.first.caption %}
+      <p class="shots__cap">{{ shots.first.caption }}</p>
+      {% endif %}
       {% endif %}
     </div>
 
@@ -48,6 +60,17 @@ author_profile: false
       risks: Coal mining hazards and social vulnerability in India</em>. Jeanne X. Kasperson
       Student Paper Award Session, American Association of Geographers Annual Meeting,
       San Francisco, CA.</p>
+      {% assign shots = site.data.conferences | where: "talk", "aag-2026" %}
+      {% if shots.size > 0 %}
+      <div class="shots">
+        {% for shot in shots %}
+        <img src="{{ shot.image | prepend: '/images/conferences/' | prepend: base_path }}"
+             alt="{{ shot.alt | default: shot.caption | escape }}" loading="lazy" decoding="async">
+        {% endfor %}
+      </div>
+      {% if shots.first.caption %}
+      <p class="shots__cap">{{ shots.first.caption }}</p>
+      {% endif %}
       {% endif %}
     </div>
 
@@ -55,17 +78,18 @@ author_profile: false
       <p class="cite">Koul, S., &amp; Chakraborty, J. (2025, December 15–19). <em>Exploring
       the relationship between air pollution and social deprivation in India</em>.
       American Geophysical Union Annual Meeting, New Orleans, LA.</p>
+      {% assign shots = site.data.conferences | where: "talk", "agu-2025" %}
+      {% if shots.size > 0 %}
+      <div class="shots">
+        {% for shot in shots %}
+        <img src="{{ shot.image | prepend: '/images/conferences/' | prepend: base_path }}"
+             alt="{{ shot.alt | default: shot.caption | escape }}" loading="lazy" decoding="async">
+        {% endfor %}
+      </div>
+      {% if shots.first.caption %}
+      <p class="shots__cap">{{ shots.first.caption }}</p>
       {% endif %}
-    </div>
-  </div>
-
-  <div class="band">
-    <div class="shead"><h2>Invited Talks &amp; Panels</h2></div>
-
-    <div class="ref">
-      <p class="cite">Student Panelist, Mantell Symposium on Environmental Justice and
-      Conservation Innovation, Bren School, UC Santa Barbara
-      <span class="qual">(invited, forthcoming)</span></p>
+      {% endif %}
     </div>
   </div>
 

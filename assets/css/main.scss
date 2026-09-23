@@ -34,7 +34,8 @@
     "layout/page",
     "layout/archive",
     "layout/sidebar",
-    
+    "layout/filmstrip",
+
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands",
@@ -44,4 +45,24 @@
 /* Cosmetic polish, imported last so it softens the base layout.
    Only pulled in when site_theme is "cute". */
 @import "layout/cute";
+{% endif %}
+{% if site.site_theme == "night" %}
+/* Dark doodle layout. Imported last so it wins over the base template.
+   Only pulled in when site_theme is "night". */
+@import "layout/night";
+{% endif %}
+{% if site.site_theme == "quiet" %}
+/* Minimal off-white layout. Imported last so it wins over the base template.
+   Only pulled in when site_theme is "quiet". */
+@import "layout/quiet";
+{% endif %}
+{% if site.site_theme == "whimsy" %}
+/* Warm paper doodle layout. Imported last so it wins over the base template.
+   Only pulled in when site_theme is "whimsy". */
+@import "layout/whimsy";
+{% endif %}
+{% if site.site_theme == "warm" %}
+/* Layout for the five splash pages. Imported last so it wins over the
+   base template. Only pulled in when site_theme is "warm". */
+@import "layout/site";
 {% endif %}

@@ -1,0 +1,41 @@
+# "Open tabs": short notes on what you are currently thinking about.
+#
+# Newest first. Adding one is a single entry: a date, a couple of sentences,
+# and any tags you want. Keep them specific, because the point is that someone
+# working on the same thing recognises it and emails you.
+#
+# TODO: these five are examples written to show the register. Replace them
+# with your own. Two or three lines each is plenty.
+
+- when: "Jul 2026"
+  what: >
+    Every exposure model I use assumes people stay where they live. I have never met a
+    person who stays where they live. What would it take to build an exposure surface
+    that admits people commute, work night shifts, and go to their mother's house on Sundays?
+  tags: [exposure, methods]
+
+- when: "Jul 2026"
+  what: >
+    Spent four days certain my results were broken. They were. It was a coordinate
+    reference system. It is always a coordinate reference system.
+  tags: [geospatial, humility]
+
+- when: "Jun 2026"
+  what: >
+    Reading about the fall in the age of menarche across 19th-century Europe. The standard
+    story is nutrition. I keep wondering how much of it is something we stopped measuring,
+    and whether we are making the same mistake now with air.
+  tags: [menarche, history, air pollution]
+
+- when: "Jun 2026"
+  what: >
+    Is defensible space compliance actually about wildfire risk, or about what your
+    neighbours will think of your yard? I suspect the satellite is measuring social
+    pressure and calling it preparedness.
+  tags: [wildfire, remote sensing]
+
+- when: "May 2026"
+  what: >
+    Current open browser tabs: 47. Ostensibly all about DHS survey weights. In practice:
+    three about survey weights, one very good bread recipe.
+  tags: [DHS, denial]

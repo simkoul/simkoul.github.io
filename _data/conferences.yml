@@ -1,0 +1,32 @@
+# Photographs attached to the conference presentations on the Research page.
+#
+#   talk    - which presentation it belongs to. Must match the slug used in
+#             _pages/research.md exactly. Current slugs:
+#               cottage-health-2026
+#               aag-2026
+#               agu-2025
+#   image   - filename inside /images/conferences/
+#   caption - optional, one short line. Leave it out if the photo speaks.
+#   alt     - screen-reader description (falls back to the caption)
+#
+# One or two per talk. Save them around 1400px on the long edge. They are
+# shown at their natural proportions, so nothing gets cropped.
+
+- talk: cottage-health-2026
+  image: cottage-2026.jpg
+  caption: "Collaborative Research Symposium | Cottage Health Research Institute | Santa Barbara, 2026"
+  alt: "Presenting at a podium beside a projected slide on age at menarche"
+
+- talk: aag-2026
+  image: aag-2026.jpg
+  caption: "Kasperson Award Session | AAG Annual Meeting | San Francisco, 2026"
+  alt: "Speaking at a lectern during the award session"
+
+- talk: aag-2026
+  image: aag-2026-slide.jpg
+  alt: "Title slide reading Unequal Risks: Coal Mining Hazards and Social Vulnerability in India"
+
+- talk: agu-2025
+  image: agu-2025.jpg
+  caption: "Poster session | AGU Annual Meeting | New Orleans, 2025"
+  alt: "Standing beside a research poster on air pollution and social deprivation in India, talking with an attendee"

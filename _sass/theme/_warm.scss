@@ -1,0 +1,92 @@
+/* ==========================================================================
+   WARM THEME
+   Warm paper, one confident accent. Cheerful through warmth rather than
+   pastels — subtle enough to sit under an academic CV.
+
+   TO CHANGE PALETTE: swap the four values in the "ACCENT" block below.
+   The alternates are given; uncomment the one you want.
+   ========================================================================== */
+
+/* ---- ACCENT — currently Marigold ---------------------------------------- */
+$paper        : #fdfbf6;
+$ink          : #23201b;
+$muted        : #6e6a5f;
+$rule         : #e7e1d4;
+$accent       : #b8801a;
+$accent-ink   : #8a5f10;
+$soft         : #f7ead0;
+
+/* Persimmon — warmest, most energetic
+$paper:#fdfaf8; $ink:#241e1c; $muted:#6f6763; $rule:#ebe2dc;
+$accent:#c0512d; $accent-ink:#973c1e; $soft:#f9e3da;
+*/
+
+/* Fern — calm, tied to environmental work
+$paper:#fafbf8; $ink:#1f2420; $muted:#656d65; $rule:#e1e7de;
+$accent:#3a7554; $accent-ink:#2b5a40; $soft:#dfeae1;
+*/
+
+/* Cobalt — crisp, institutional
+$paper:#fafbfd; $ink:#1b1f26; $muted:#646b77; $rule:#e0e5ec;
+$accent:#2b57b8; $accent-ink:#1f4193; $soft:#e0e8f8;
+*/
+/* ------------------------------------------------------------------------- */
+
+$raise        : #ffffff;
+
+/* Names the base template expects */
+$gray         : $muted;
+$dark-gray    : $ink;
+$darker-gray  : mix(#000, $ink, 25%);
+$light-gray   : mix(#fff, $muted, 45%);
+$lighter-gray : $rule;
+
+$danger-color : #c0512d;
+$info-color   : $accent;
+$notice-color : $accent;
+$success-color: #3a7554;
+$warning-color: #b8801a;
+
+$border-radius            : 3px;
+$box-shadow               : 0 3px 14px rgba(0, 0, 0, 0.10);
+$global-transition        : all 0.22s ease;
+$masthead-height          : 70px;
+$navicon-width            : 28px;
+$navicon-height           : 4px;
+$sidebar-link-max-width   : 250px;
+$sidebar-screen-min-width : 1024px;
+
+/* Typefaces — loaded in _includes/head.html */
+$warm-body    : "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$warm-display : "Source Serif 4", Georgia, "Times New Roman", serif;
+$warm-mono    : "IBM Plex Mono", Menlo, Consolas, monospace;
+
+$global-font-family  : $warm-body;
+$header-font-family  : $warm-display;
+$caption-font-family : $warm-body;
+
+:root {
+  --global-base-color                : #{$muted};
+  --global-bg-color                  : #{$paper};
+  --global-border-color              : #{$rule};
+  --global-code-background-color     : #{$soft};
+  --global-code-text-color           : #{$ink};
+  --global-fig-caption-color         : #{$muted};
+  --global-link-color                : #{$accent-ink};
+  --global-link-color-hover          : #{$accent};
+  --global-link-color-visited        : #{$accent-ink};
+  --global-masthead-link-color       : #{$ink};
+  --global-masthead-link-color-hover : #{$accent-ink};
+  --global-text-color                : #{$ink};
+  --global-text-color-light          : #{$light-gray};
+  --global-thead-color               : #{$soft};
+
+  --paper      : #{$paper};
+  --raise      : #{$raise};
+  --ink        : #{$ink};
+  --muted      : #{$muted};
+  --rule       : #{$rule};
+  --accent     : #{$accent};
+  --accent-ink : #{$accent-ink};
+  --soft       : #{$soft};
+}
