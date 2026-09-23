@@ -53,6 +53,8 @@
 {% endif %}
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<!-- The build time in the URL means a new stylesheet is a new address, so
+     browsers fetch it instead of serving a cached copy after a deploy. -->
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v={{ site.time | date: '%s' }}">
 
 <meta http-equiv="cleartype" content="on">
