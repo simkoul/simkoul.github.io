@@ -219,8 +219,7 @@ body {
   color: var(--muted);
 }
 
-/* The bio is the only real prose on the site, so it gets the serif and a
-   larger size. Inter is a UI face; at paragraph length it reads flat. */
+/* The bio is the lead paragraph, so it runs a little larger than the rest. */
 .home__bio {
   text-align: left;
   margin: 0 auto 2.4rem;

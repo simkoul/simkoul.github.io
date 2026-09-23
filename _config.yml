@@ -61,7 +61,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "https://www.linkedin.com/in/koulsimran"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -147,6 +147,7 @@ social:
   links: # Tells search engines these profiles are the same person
     - "https://scholar.google.com/citations?user=KoitZBkAAAAJ&hl=en"
     - "https://orcid.org/0009-0003-3502-3165"
+    - "https://www.linkedin.com/in/koulsimran"
     - "https://github.com/simkoul"
 
 

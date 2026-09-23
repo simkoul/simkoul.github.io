@@ -46,10 +46,13 @@ $sidebar-link-max-width   : 250px;
 $sidebar-screen-min-width : 1024px;
 
 /* Typefaces — loaded in _includes/head.html.
-   Spectral at 400, never 700: weight is what made the last one shout. */
-$quiet-body    : "Inter", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+   One face for the whole site. $quiet-body and $quiet-display are both
+   Spectral, so every rule that asks for either gets the same thing; the two
+   names are kept so the layout still reads as body text versus display.
+   Spectral at 400, never 700: weight is what made the last theme shout. */
 $quiet-display : "Spectral", Georgia, "Times New Roman", serif;
-$quiet-mono    : "IBM Plex Mono", Menlo, Consolas, monospace;
+$quiet-body    : $quiet-display;
+$quiet-mono    : $quiet-display;
 
 $global-font-family  : $quiet-body;
 $header-font-family  : $quiet-display;

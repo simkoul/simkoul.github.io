@@ -30,11 +30,11 @@ author_profile: false
 
     <ul class="home__links">
       <li><a href="{{ site.author.googlescholar }}">Google Scholar</a></li>
-      <li><a href="{{ site.author.orcid }}">ORCID</a></li>
-      <!-- Send me the URLs and these go live:
-      <li><a href="">ResearchGate</a></li>
-      <li><a href="">Web of Science</a></li>
-      <li><a href="">LinkedIn</a></li>
+      <li><a href="{{ site.author.linkedin }}">LinkedIn</a></li>
+      <!-- Uncomment to add, URLs taken from your CV:
+      <li><a href="https://orcid.org/0009-0003-3502-3165">ORCID</a></li>
+      <li><a href="https://www.webofscience.com/wos/author/record/NGR-0180-2025">Web of Science</a></li>
+      <li><a href="https://bren.ucsb.edu/people/simran-koul">Bren profile</a></li>
       -->
     </ul>
   </div>
