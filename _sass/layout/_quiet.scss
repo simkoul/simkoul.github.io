@@ -40,11 +40,18 @@ body {
      set in the display serif now and outgrew that box, so they spilled past
      the bottom border and hid it behind the nav. Let the bar size itself. */
   height: auto;
-  background: rgba(250, 249, 247, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+
+  /* Solid, not translucent. The base template gives every nav item an opaque
+     background, so a see-through bar showed those items as a brighter block
+     against the blurred page scrolling behind them. */
+  background: var(--paper);
   border-bottom: 1px solid var(--rule);
 }
+
+/* the opaque per-item background that caused it */
+.masthead__menu-item { background-color: transparent; }
+
+.greedy-nav .visible-links a::before { display: none; }
 
 .masthead__inner-wrap {
   font-family: $quiet-body;
@@ -62,6 +69,9 @@ body {
     letter-spacing: 0.01em;
 
     &::before { display: none; }
+
+    /* the base rule for this is .greedy-nav .visible-links a:before, which
+       outranks the line above, so it has to be matched here too */
 
     &:hover { color: var(--accent); }
   }
