@@ -26,13 +26,13 @@ author_profile: false
     <div class="shead"><h2>Fellowships &amp; Scholarships</h2></div>
 
     <div class="item"><span class="y">2026</span><div>
-      <div class="t">Schmidt Family Foundation Research Accelerator</div></div></div>
-    <div class="item"><span class="y">2026</span><div>
-      <div class="t">Bren Environmental Leadership Fellowship</div></div></div>
-    <div class="item"><span class="y">2026</span><div>
       <div class="t">Bren Emerging Environmental Scholars PhD Mentor Fellowship</div>
       <div class="s">Field-based environmental education with Lompoc Unified School
       District students at the Dangermond Preserve</div></div></div>
+    <div class="item"><span class="y">2026</span><div>
+      <div class="t">Schmidt Family Foundation Research Accelerator</div></div></div>
+    <div class="item"><span class="y">2026</span><div>
+      <div class="t">Bren Environmental Leadership Fellowship</div></div></div>
     <div class="item"><span class="y">2026</span><div>
       <div class="t">Students in STEM Scholarship
       <span class="qual">(UC Santa Barbara)</span></div></div></div>
