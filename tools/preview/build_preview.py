@@ -32,7 +32,6 @@ PAGES = [
 AUTHOR = {
     "googlescholar": "https://scholar.google.com/citations?user=KoitZBkAAAAJ&hl=en",
     "orcid": "https://orcid.org/0009-0003-3502-3165",
-    "github": "https://github.com/simkoul",
 }
 
 
