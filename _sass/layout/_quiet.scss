@@ -228,9 +228,10 @@ body {
   font-style: italic;
   color: var(--muted);
 
+  /* No letterspacing: the hyphen already separates the syllables, and spaced
+     caps here read as a second label competing with PHD STUDENT below. */
   span {
     font-style: normal;
-    letter-spacing: 0.07em;
     color: var(--ink);
   }
 }
