@@ -1,29 +1,26 @@
-# Photographs for the Gallery page.
+# Photographs for the Elsewhere page.
 #
-#   group   - the section it appears under. Reuse the exact same spelling for
-#             every photo in a set, and the sections appear in the order the
-#             groups first show up in this file.
+#   group   - the heading this photo sits under. Use the same spelling for
+#             every photo in a set; sections appear in the order the groups
+#             first show up in this file. Anything you like: "Delhi", "At the
+#             water", "2024", "Things I cooked".
 #   image   - filename inside /images/elsewhere/
-#   caption - the part worth writing. Where, when, and what was happening.
-#   alt     - screen-reader description (falls back to the caption)
+#   caption - the part worth writing, and the reason the page is interesting.
+#             A sentence in your voice beats a label.
+#   alt     - screen-reader description. Falls back to the caption.
 #
-# Photos are never cropped: portrait and landscape both sit fine in the grid.
-# Save them around 1400px on the long edge.
+# Nothing is cropped: portrait and landscape both sit fine in the grid, and
+# clicking a photo opens it full size. Save them around 1400px on the long
+# edge. The page stays switched off until there is at least one entry here.
 #
-# TODO: replace the examples below with your own. Delete this block when done.
+# A note worth keeping in mind: anyone recognisable in a photograph has not
+# agreed to appear on a public academic page. Faces of friends and family are
+# worth a second thought, or a crop.
 
-# - group: Fieldwork
-#   image: jharkhand-coal.jpg
-#   caption: "Coal belt, Jharkhand, 2024. Sampling within a kilometre of an open-cast pit."
+# - group: Delhi
+#   image: winter-morning.jpg
+#   caption: "The winter I stopped checking the AQI before going outside, because it never changed."
 #
-# - group: Fieldwork
-#   image: survey-bihar.jpg
-#   caption: "Motihari, Bihar, 2023."
-#
-# - group: Elsewhere
-#   image: delhi-winter.jpg
-#   caption: "Delhi, December 2022. The week the AQI stopped being a number and started being weather."
-#
-# - group: Elsewhere
-#   image: sb-pier.jpg
-#   caption: "Santa Barbara, 2025."
+# - group: Santa Barbara
+#   image: pier.jpg
+#   caption: "Six thousand miles from the last photograph, same habit of watching the sky."

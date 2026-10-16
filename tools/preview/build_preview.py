@@ -27,6 +27,7 @@ PAGES = [
     ("Recognitions", "recognitions.md"),
     ("Teaching",     "teaching.html"),
     ("Contact",      "contact.md"),
+    ("Elsewhere",    "elsewhere.md"),
 ]
 
 AUTHOR = {

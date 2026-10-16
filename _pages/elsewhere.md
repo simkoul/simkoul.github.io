@@ -1,9 +1,9 @@
 ---
-permalink: /gallery/
-title: "Gallery"
+permalink: /elsewhere/
+title: "Elsewhere"
 layout: splash
 author_profile: false
-published: false   # kept for later; photographs not ready yet
+published: false   # switch on once there are photographs in _data/photographs.yml
 ---
 
 {% include base_path %}
@@ -11,9 +11,9 @@ published: false   # kept for later; photographs not ready yet
 <div class="wrap">
 
   <div class="band">
-    <h1 class="display">Gallery</h1>
+    <h1 class="display">Elsewhere</h1>
     <div class="col">
-      <p class="aff">Field sites, and the places in between.</p>
+      <p class="aff">Photographs from outside the work.</p>
     </div>
   </div>
 
