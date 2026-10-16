@@ -14,6 +14,8 @@ author_profile: false
     <div class="home__portrait" style="background-image:url('{{ base_path }}/images/profile.jpg')"></div>
 
     <h1 class="display home__name">Simran Koul</h1>
+    <p class="home__say">pronounced <span>SIM-ruhn KOHL</span></p>
+
     <p class="home__aff">
       <span class="home__role">PhD Student</span>
       <span class="home__inst">Bren School of Environmental Science &amp; Management</span>

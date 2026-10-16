@@ -214,7 +214,25 @@ body {
 
 .page__content h1.home__name {
   font-size: 2rem;
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.35rem;
+}
+
+/* How the name is said, directly under it. "pronounced" is set in the same
+   muted italic the institution lines use, so it reads as a quiet aside; the
+   guide itself is letterspaced a little to separate the syllables. */
+.page__content .home__say {
+  margin: 0 0 1.1rem;
+  max-width: none;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--muted);
+
+  span {
+    font-style: normal;
+    letter-spacing: 0.07em;
+    color: var(--ink);
+  }
 }
 
 .home__aff {
